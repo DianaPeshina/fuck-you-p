@@ -1,10 +1,8 @@
 import locale
 import sys
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QDialog,QApplication,QMainWindow
+from PyQt5.QtWidgets import QApplication,QMainWindow
 from PyQt5.uic import loadUi
-from tkinter import *
-from tkinter.ttk import Combobox
 
 class SqrtCalculator(QMainWindow):
     def __init__(self): # инициализация графического интерфейса
