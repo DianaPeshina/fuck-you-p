@@ -7,7 +7,7 @@ from tkinter import *
 from tkinter.ttk import Combobox
 
 class SqrtCalculator(QMainWindow):
-    def __init__(self):
+    def __init__(self): # инициализация графического интерфейса
         super(SqrtCalculator,self).__init__()
         loadUi('form.ui',self)
         self.calculateBtn.clicked.connect(self.calculate)
@@ -16,13 +16,12 @@ class SqrtCalculator(QMainWindow):
 
     def isMatch(self, inputNum):  # проверка типа входных данных
         pointer = 0
-        #string = string.replace(" ", "")  # удаляем пробелы, мешающие работе
         inputNum = inputNum.replace('i', 'j')  # приводим к питон-виду, если есть комплексная часть
         try:  # int, ноль
             if (inputNum.find('-') != -1 and inputNum.find('j') == -1):
                 inputNum += '+0j'
             inputNum = int(inputNum)
-            inputNum = 1
+            pointer= 1
         except (ValueError, TypeError):
 
             try:  # float
